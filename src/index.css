@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root
+{
+  background-color: #CCE5FF ;
+}
+
+.card2 {
+  display: block;
+  top: 0px;
+  position: relative;
+  max-width: 262px;
+  background-color: #dfe1e1;
+  border-radius: 4px;
+  padding: 16px 8px;
+  margin-left: 10px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid black;
+  transition: 0.5s;
+}
+
+.card2:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -5px;
+  border: 1px solid #cccccc;
+  background-color: white;
+}
+
+
+.container {
+  margin-left: 10px;
+  padding-top: 150px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.container .card {
+  position: relative;
+  max-width: 300px;
+  height: 130px;
+  background-color: #fff;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: height 0.3s ease-in-out;
+  border-radius: 15px;
+  margin-bottom: 20px; /* Add margin bottom to create space between cards */
+}
+
+.container .card:hover {
+  height: 280px; /* Increase height on hover */
+}
+
+.container .card .image {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  top: -40%;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.container .card .image img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.container .card .content {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+
+
+/* Add this CSS to your stylesheet */
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+
+
+
