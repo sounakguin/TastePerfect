@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Products({ cart, setcart, warning, setwarning }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,9 +47,9 @@ export default function Products({ cart, setcart, warning, setwarning }) {
       setcart([...cart, item]);
     }
   };
+
   return (
     <div className="bg-gray-900 ">
-     
       <form className="max-w-md mx-auto ">
         <label
           htmlFor="default-search"
@@ -95,7 +96,9 @@ export default function Products({ cart, setcart, warning, setwarning }) {
         </div>
       </form>
       {warning && (
-        <div className="text-white font-bold text-4xl pt-10 text-center">Item is already present in your cart</div>
+        <div className="text-white font-bold text-4xl pt-10 text-center">
+          Item is already present in your cart
+        </div>
       )}
       <section className="text-gray-400 bg-gray-900 body-font mt-5">
         <div className="px-5 py-10 mx-auto">
@@ -103,13 +106,15 @@ export default function Products({ cart, setcart, warning, setwarning }) {
             {renderData &&
               renderData.map((item) => (
                 <div key={item.idMeal} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                  <a className="block relative h-48 rounded-lg overflow-hidden">
-                    <img
-                      alt={`Thumbnail for ${item.strMeal}`}
-                      className="object-cover object-center w-full h-full block border border-white"
-                      src={item.strMealThumb}
-                    />
-                  </a>
+                  <Link to={`/Noproductsata/${item.idMeal}`}>
+                    <a className="block relative h-48 rounded-lg overflow-hidden">
+                      <img
+                        alt={`Thumbnail for ${item.strMeal}`}
+                        className="object-cover object-center w-full h-full block border border-white"
+                        src={item.strMealThumb}
+                      />
+                    </a>
+                  </Link>
                   <div className="flex items-center justify-between mt-4">
                     <h2 className="text-white text-lg font-medium">
                       Item name : {item.strMeal}

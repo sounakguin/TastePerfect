@@ -6,7 +6,7 @@ import logo from "../Images/Logo.png";
 
 export default function Navbar({ cartSize }) {
   return (
-    <nav className="bg-white text-black mx-auto flex justify-between items-center py-4">
+    <nav className="bg-white border-b-2 border-black text-black mx-auto flex justify-between items-center py-4">
       <Link to="/Home">
         <img className="h-14 ml-16" src={logo} alt="Website logo" />
       </Link>
