@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Instruction from "../Images/Cooking.png";
 
-
 export default function PlaceOrderForm({ isVisible, clearcart }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +15,6 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
   const [step, setStep] = useState(1);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
@@ -38,7 +36,6 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
 
     if (step === 3 && isAnyFieldEmpty) {
       alert("Please fill out all required fields.");
-    
     }
     // Simulate order submission
     // Ideally, you would submit this data to a backend API
@@ -67,7 +64,10 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
   };
 
   const nextStep = () => {
-    if (step === 1 && !(formData.name && formData.email && formData.mobile && formData.address)) {
+    if (
+      step === 1 &&
+      !(formData.name && formData.email && formData.mobile && formData.address)
+    ) {
       alert("Please fill all the required field");
     } else {
       setStep(step + 1);
@@ -80,9 +80,11 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
         return (
           <>
             <div>
-            <p className="text-center pt-2 pb-2 bg-gray-700 text-white">User Details</p>
-<br/>
-              <label
+              <p className="text-center pt-2 pb-2 bg-gray-700 text-white">
+                User Details
+              </p>
+              <br />
+              <label 
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
@@ -155,8 +157,10 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
         return (
           <>
             <div className="text-center">
-            <p className="text-center pt-2 pb-2 bg-gray-700 text-white">Cooking Instruction</p>
-<br/>
+              <p className="text-center pt-2 pb-2 bg-gray-700 text-white">
+                Cooking Instruction
+              </p>
+              <br />
               <img
                 src={Instruction}
                 alt="Cooking Instructions"
@@ -177,10 +181,11 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
       case 3:
         return (
           <>
-           
             <div>
-            <p className="text-center pt-2 pb-2 bg-gray-700 text-white">Payment Details</p>
-<br/>
+              <p className="text-center pt-2 pb-2 bg-gray-700 text-white">
+                Payment Details
+              </p>
+              <br />
               <label
                 htmlFor="cardNumber"
                 className="block text-sm font-medium text-gray-700"
