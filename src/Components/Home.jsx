@@ -25,7 +25,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const sliderRef = useRef();
 
-  var settings = {
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -103,7 +103,7 @@ export default function Home() {
           onClick={slidePrev}
         />
         <FontAwesomeIcon
-          className="absolute right-52  border border-sky-500 h-8 rounded-full bg-yellow-300 text-black cursor-pointer"
+          className="absolute right-52 border border-sky-500 h-8 rounded-full bg-yellow-300 text-black cursor-pointer"
           icon={faArrowRight}
           onClick={slideNext}
         />

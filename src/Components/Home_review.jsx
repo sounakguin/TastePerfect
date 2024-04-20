@@ -28,11 +28,12 @@ const Card = () => {
               <img src={one} alt="Placeholder" />
             </div>
             <div className="content">
-            
               <p>
-               
-              While the food options are decent, the delivery times are inconsistent. Sometimes my order arrives early, but other times it's significantly delayed. It's frustrating when you're hungry and waiting for your meal. I hope they can improve their delivery service reliability.
-             
+                While the food options are decent, the delivery times are
+                inconsistent. Sometimes my order arrives early, but other times
+                it's significantly delayed. It's frustrating when you're hungry
+                and waiting for your meal. I hope they can improve their
+                delivery service reliability.
               </p>
             </div>
           </div>
@@ -43,9 +44,12 @@ const Card = () => {
               <img src={two} alt="Placeholder" />
             </div>
             <div className="content">
-             
               <p>
-              While the food options are decent, the delivery times are inconsistent. Sometimes my order arrives early, but other times it's significantly delayed. It's frustrating when you're hungry and waiting for your meal. I hope they can improve their delivery service reliability.
+                While the food options are decent, the delivery times are
+                inconsistent. Sometimes my order arrives early, but other times
+                it's significantly delayed. It's frustrating when you're hungry
+                and waiting for your meal. I hope they can improve their
+                delivery service reliability.
               </p>
             </div>
           </div>
@@ -56,9 +60,12 @@ const Card = () => {
               <img src={three} alt="Placeholder" />
             </div>
             <div className="content">
-             
               <p>
-              While the food options are decent, the delivery times are inconsistent. Sometimes my order arrives early, but other times it's significantly delayed. It's frustrating when you're hungry and waiting for your meal. I hope they can improve their delivery service reliability.
+                While the food options are decent, the delivery times are
+                inconsistent. Sometimes my order arrives early, but other times
+                it's significantly delayed. It's frustrating when you're hungry
+                and waiting for your meal. I hope they can improve their
+                delivery service reliability.
               </p>
             </div>
           </div>
@@ -69,10 +76,13 @@ const Card = () => {
               <img src={four} alt="Placeholder" />
             </div>
             <div className="content">
-             
               <p>
-              While the food options are decent, the delivery times are inconsistent. Sometimes my order arrives early, but other times it's significantly delayed. It's frustrating when you're hungry and waiting for your meal. I hope they can improve their delivery service reliability.
-             </p>
+                While the food options are decent, the delivery times are
+                inconsistent. Sometimes my order arrives early, but other times
+                it's significantly delayed. It's frustrating when you're hungry
+                and waiting for your meal. I hope they can improve their
+                delivery service reliability.
+              </p>
             </div>
           </div>
         </div>
