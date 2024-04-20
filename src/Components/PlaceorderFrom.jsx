@@ -15,6 +15,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
   const [step, setStep] = useState(1);
 
   const handleChange = (e) => {
+    const {name, value} = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
@@ -173,7 +174,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
               </label>
               <textarea
                 id="cookingInstruction"
-                className="block h-32 w-full border border-gray-500 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="h-32 w-full p-2 border border-gray-500 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </>
