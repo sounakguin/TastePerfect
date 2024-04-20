@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../Images/Logo.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -183,9 +184,13 @@ export default function Footer() {
         <p>© 2024 Sounak Guin. All rights reserved.</p>
         <p>
           Developed By{" "}
-          <a href="#" className="text-yellow-400 hover:text-green-500">
+          <Link
+            to="https://www.google.com"
+            target="_blank"
+            className="text-yellow-400 hover:text-green-500"
+          >
             Sounak Guin
-          </a>
+          </Link>
         </p>
       </div>
     </footer>
