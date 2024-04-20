@@ -3,14 +3,8 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 
-const HoverEffect = ({
-  items,
-  className,
-}: {
-  items: Project[];
-  className?: string;
-}) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const HoverEffect = ({ items, className }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div
@@ -47,13 +41,7 @@ const HoverEffect = ({
   );
 };
 
-const Card = ({
-  image,
-  children,
-}: {
-  image: string;
-  children: React.ReactNode;
-}) => {
+const Card = ({ image, children }) => {
   return (
     <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
       <img src={image} alt="Card" className="w-full h-auto" />
@@ -64,7 +52,7 @@ const Card = ({
   );
 };
 
-const CardDescription = ({ children }: { children: React.ReactNode }) => {
+const CardDescription = ({ children }) => {
   return (
     <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
       {children}
@@ -73,10 +61,3 @@ const CardDescription = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default HoverEffect;
-
-interface Project {
-  title: string;
-  description: string;
-  link: string;
-  image: string;
-}
