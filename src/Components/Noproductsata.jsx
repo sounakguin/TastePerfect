@@ -73,7 +73,7 @@ export default function Noproductsata() {
           <h2 className="text-xl font-semibold mt-4 mb-2">Instructions</h2>
           <p className="text-black">{product.strInstructions}</p>
           <p className="text-black mt-6">
-          Youtube Instruction :
+            Youtube Instruction :
             <a
               href={product.strYoutube}
               target="_blank"

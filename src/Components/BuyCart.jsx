@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import PlaceorderFrom from "./PlaceorderFrom";
 
-export default function Cart({ cart, setCart,  }) {
+export default function Cart({ cart, setCart }) {
   const [totalPrice, setTotalPrice] = useState(calculateTotal());
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -12,7 +12,6 @@ export default function Cart({ cart, setCart,  }) {
 
   const clearcart = () => {
     setCart([]);
-   
   };
 
   // Function to calculate the total price
@@ -28,7 +27,6 @@ export default function Cart({ cart, setCart,  }) {
     setCart(updatedCart);
     setTotalPrice(calculateTotal() - 16);
   }
-
 
   return (
     <div className="bg-gray-100 p-4">

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Booking_image from "../Images/order_image.png";
 
 export default function Sitbook() {
-  const [formdata, setformdata] = useState([]);
   const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = (e) => {

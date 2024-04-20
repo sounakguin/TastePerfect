@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#root
-{
-  background-color: #CCE5FF ;
+#root {
+  background-color: #cce5ff;
 }
 
 .card2 {
@@ -30,7 +29,6 @@
   border: 1px solid #cccccc;
   background-color: white;
 }
-
 
 .container {
   margin-left: 10px;
@@ -93,12 +91,8 @@
   transition-delay: 0.2s;
 }
 
-
-
 /* Add this CSS to your stylesheet */
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   color: black !important;
 }
-
-
-

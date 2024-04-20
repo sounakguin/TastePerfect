@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 
-const HoverEffect = ({ items, className }: { items: Project[]; className?: string }) => {
+const HoverEffect = ({
+  items,
+  className,
+}: {
+  items: Project[];
+  className?: string;
+}) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 ${className}`}>
+    <div
+      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 ${className}`}
+    >
       {items.map((item, idx) => (
         <Link
           to={item.link}
@@ -23,12 +31,14 @@ const HoverEffect = ({ items, className }: { items: Project[]; className?: strin
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 0.15 } }}
-                exit={{ opacity: 0, transition: { duration: 0.15, delay: 0.2 } }}
+                exit={{
+                  opacity: 0,
+                  transition: { duration: 0.15, delay: 0.2 },
+                }}
               />
             )}
           </AnimatePresence>
-          <Card 
-          image={item.image}>
+          <Card image={item.image}>
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </Link>
@@ -37,7 +47,13 @@ const HoverEffect = ({ items, className }: { items: Project[]; className?: strin
   );
 };
 
-const Card = ({ image, children }: { image: string; children: React.ReactNode }) => {
+const Card = ({
+  image,
+  children,
+}: {
+  image: string;
+  children: React.ReactNode;
+}) => {
   return (
     <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
       <img src={image} alt="Card" className="w-full h-auto" />
@@ -49,7 +65,11 @@ const Card = ({ image, children }: { image: string; children: React.ReactNode })
 };
 
 const CardDescription = ({ children }: { children: React.ReactNode }) => {
-  return <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">{children}</p>;
+  return (
+    <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
+      {children}
+    </p>
+  );
 };
 
 export default HoverEffect;
@@ -60,4 +80,3 @@ interface Project {
   link: string;
   image: string;
 }
-

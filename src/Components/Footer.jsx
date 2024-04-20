@@ -1,16 +1,19 @@
 import React from "react";
-import logo from "../Images/Logo.png"
-const Footer = () => {
+import logo from "../Images/Logo.png";
+
+export default function Footer() {
   return (
     <footer className="bg-blue-950 text-gray-300 py-6">
       <div className="mx-auto flex flex-col md:flex-row items-center">
         <div className="pl-16 mb-4 md:mb-0 text-center md:text-left">
           <a href="#" className="flex items-center text-white">
-           <img className="h-20 w-auto object-cover cursor-pointer" src={logo} alt=""/>
+            <img
+              className="h-20 w-auto object-cover cursor-pointer"
+              src={logo}
+              alt=""
+            />
           </a>
-          <p className="mt-2 text-sm">
-            Awo Order Karo and Enjoy Karo Khana
-          </p>
+          <p className="mt-2 text-sm">Awo Order Karo and Enjoy Karo Khana</p>
         </div>
         <div className="flex justify-center md:justify-end space-x-4">
           <div className="pt-12 pl-24">
@@ -114,7 +117,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg pt-12 pl-28 font-semibold mb-2">Follow Us</h3>
+            <h3 className="text-lg pt-12 pl-28 font-semibold mb-2">
+              Follow Us
+            </h3>
             <div className="flex space-x-2 pl-28 pt-2">
               <a
                 href="#"
@@ -141,18 +146,18 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-  href="#"
-  className="text-white hover:text-indigo-500 transition duration-300"
->
-  <svg
-    fill="currentColor" // Set the fill color to currentColor
-    viewBox="0 0 24 24"
-    className="w-6 h-6"
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-  </svg>
-</a>
+                href="#"
+                className="text-white hover:text-indigo-500 transition duration-300"
+              >
+                <svg
+                  fill="currentColor" // Set the fill color to currentColor
+                  viewBox="0 0 24 24"
+                  className="w-6 h-6"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
 
               <a
                 href="#"
@@ -187,4 +192,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+

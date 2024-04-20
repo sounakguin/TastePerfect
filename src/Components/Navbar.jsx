@@ -14,10 +14,10 @@ export default function Navbar({ cartSize }) {
         <li className=" hover:text-blue-900">
           <Link to="/Home">Home</Link>
         </li>
-        <li  className=" hover:text-blue-900">
+        <li className=" hover:text-blue-900">
           <Link to="/Products">Products</Link>
         </li>
-        <li  className=" hover:text-blue-900">
+        <li className=" hover:text-blue-900">
           <Link to="/Contact">Contact Us</Link>
         </li>
       </ul>

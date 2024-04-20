@@ -84,7 +84,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 User Details
               </p>
               <br />
-              <label 
+              <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
