@@ -2,21 +2,21 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Banner from "../Images/Banner.png";
-import Aimg from "../Images/Food-Plate.png";
+import Banner from "/Images/Banner.png";
+import Aimg from "/Images/Food-Plate.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Biriyani from "../Images/Biriyani.png";
-import Burger from "../Images/buger.jpg";
-import Cake from "../Images/cake.jpg";
-import Chocolate from "../Images/chocolate.jpg";
-import Chinese from "../Images/Chinese.jpg";
-import Dhosa from "../Images/Dhosa.jpeg";
-import Pasta from "../Images/pasta.jpg";
-import Juse from "../Images/juice.jpg";
-import Momo from "../Images/Momos.jpg";
-import Pizza from "../Images/pizza.jpg";
-import Rasgulla from "../Images/Rasgulla.jpg";
+import Biriyani from "/Images/Biriyani.png";
+import Burger from "/Images/buger.jpg";
+import Cake from "/Images/cake.jpg";
+import Chocolate from "/Images/chocolate.jpg";
+import Chinese from "/Images/Chinese.jpg";
+import Dhosa from "/Images/Dhosa.jpeg";
+import Pasta from "/Images/pasta.jpg";
+import Juse from "/Images/juice.jpg";
+import Momo from "/Images/Momos.jpg";
+import Pizza from "/Images/pizza.jpg";
+import Rasgulla from "/Images/Rasgulla.jpg";
 import Home_Product_Gallary from "../Components/Home_Product_Gallary";
 import Home_review from "../Components/Home_review";
 import Booking from "../Components/Sitbook";
@@ -124,7 +124,9 @@ export default function Home() {
           </div>
         ))}
       </Slider>
-      <p className="text-center text-black font-bold mt-16 text-4xl ">About US</p>
+      <p className="text-center text-black font-bold mt-16 text-4xl ">
+        About US
+      </p>
       <div className="flex justify-center">
         <img className="h-80 mt-20 " src={Aimg} alt="Image" />
         <p className="pt-16 w-2/5  ">

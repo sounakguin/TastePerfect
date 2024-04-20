@@ -2,10 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import one from "../Images/review_1.jpg";
-import two from "../Images/review_2.jpg";
-import three from "../Images/review_3.jpg";
-import four from "../Images/review_4.jpg";
+import one from "/Images/review_1.jpg";
+import two from "/Images/review_2.jpg";
+import three from "/Images/review_3.jpg";
+import four from "/Images/review_4.jpg";
 
 const Card = () => {
   const settings = {

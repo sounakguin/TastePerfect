@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Instruction from "../Images/Cooking.png";
+import Instruction from "/Images/Cooking.png";
 
 export default function PlaceOrderForm({ isVisible, clearcart }) {
   const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
   const [step, setStep] = useState(1);
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 

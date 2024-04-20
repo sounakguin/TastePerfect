@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import logo from "../Images/Logo.png";
+import logo from "/Images/Logo.png";
 
 export default function Navbar({ cartSize }) {
   return (

@@ -1,10 +1,10 @@
 import HoverEffect from "../Components/ui/card-hover-effect";
-import one from "../Images/gallary_1.jpg";
-import two from "../Images/gallary_2.jpg"; // Assuming you have different images for each item
-import three from "../Images/gallary_3.jpg";
-import four from "../Images/gallary_4.jpg";
-import five from "../Images/gallary_5.jpg";
-import six from "../Images/gallary_6.jpg";
+import one from "/Images/gallary_1.jpg";
+import two from "/Images/gallary_2.jpg"; // Assuming you have different images for each item
+import three from "/Images/gallary_3.jpg";
+import four from "/Images/gallary_4.jpg";
+import five from "/Images/gallary_5.jpg";
+import six from "/Images/gallary_6.jpg";
 
 export default function Home_Product_Gallary() {
   return (

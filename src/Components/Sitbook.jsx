@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Booking_image from "../Images/order_image.png";
+import Booking_image from "/Images/order_image.png";
 
 export default function Sitbook() {
   const [showThankYou, setShowThankYou] = useState(false);

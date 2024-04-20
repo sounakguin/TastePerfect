@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Images/Logo.png";
+import logo from "/Images/Logo.png";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -195,6 +195,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-};
-
-
+}
