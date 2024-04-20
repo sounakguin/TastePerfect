@@ -16,7 +16,7 @@ function YourPageComponent() {
             <p>Your order has been successfully placed.</p>
           </div>
           <p className="mt-6"></p>
-          <a href="/Home" className="block">
+          <a href="/" className="block">
             <button className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 focus:outline-none">
               Close
             </button>

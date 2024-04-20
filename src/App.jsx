@@ -18,7 +18,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar cartSize={cart.length} />
       <Routes>
-        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/Products"
           element={
