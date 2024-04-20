@@ -20,7 +20,7 @@ const Card = () => {
   };
 
   return (
-    <div className=" w-3/4 mx-auto">
+    <div className="w-3/4 mx-auto">
       <Slider {...settings}>
         <div className="container">
           <div className="card">
