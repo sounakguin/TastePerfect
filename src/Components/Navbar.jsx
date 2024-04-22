@@ -24,36 +24,33 @@ export default function Navbar({ cartSize }) {
           <Link to="/Contact">Contact Us</Link>
         </li>
       </ul>
-      {isAuthenticated && (user.name ? <p>{user.name}</p> : <p>{user.email}</p>)}
 
-      {console.log(user)}
       <div className="flex items-center mr-6">
-  {isAuthenticated ? (
-    <li className="mr-10">
-      <button
-        onClick={() =>
-          logout({ logoutParams: { returnTo: window.location.origin } })
-        }
-      >
-        LogOut
-      </button>
-    </li>
-  ) : (
-    <li className="mr-10">
-      <button onClick={() => loginWithRedirect()}>Login</button>
-    </li>
-  )}
-  {/* Add a space */}
-  <span className="mr-4"></span>
-  <Link to="/BuyCart">
-    <FontAwesomeIcon
-      icon={faShoppingCart}
-      className="hover:text-red-600"
-    />
-    <span>{cartSize}</span>
-  </Link>
-</div>
-
+        {isAuthenticated ? (
+          <li className="mr-10">
+            <button
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+            >
+              LogOut
+            </button>
+          </li>
+        ) : (
+          <li className="mr-10">
+            <button onClick={() => loginWithRedirect()}>Login</button>
+          </li>
+        )}
+        {/* Add a space */}
+        <span className="mr-4"></span>
+        <Link to="/BuyCart">
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            className="hover:text-red-600"
+          />
+          <span>{cartSize}</span>
+        </Link>
+      </div>
     </nav>
   );
 }
