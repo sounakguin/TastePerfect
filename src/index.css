@@ -96,3 +96,7 @@
 .slick-next:before {
   color: black !important;
 }
+
+li {
+  list-style-type: none;
+}
