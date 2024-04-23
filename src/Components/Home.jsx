@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,14 +23,12 @@ import Booking from "../Components/Sitbook";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const sliderRef = useRef();
-
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 2,
     initialSlide: 0,
 
     responsive: [
@@ -58,35 +56,29 @@ export default function Home() {
     ],
   };
 
-  const slideNext = () => {
-    sliderRef.current.slickNext();
-  };
-
-  const slidePrev = () => {
-    sliderRef.current.slickPrev();
-  };
-
   return (
     <div>
-      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 w-full flex flex-wrap items-center justify-center py-16 px-4 md:px-0">
+      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 w-full flex flex-wrap items-center justify-center py-8 md:py-16 px-4 md:px-0">
         <div className="text-white text-center md:text-left md:w-1/2">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 ml-16">
+          <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 ml-4 md:ml-16">
             Order the Finest
           </h1>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 ml-16">
+          <h2 className="text-2xl md:text-5xl font-bold mb-2 md:mb-4 ml-4 md:ml-16">
             Takeaway Food to Your Door
           </h2>
-          <p className="text-lg md:text-xl mb-8 ml-16">
+          <p className="text-base md:text-xl mb-4 ml-4 md:ml-16">
             Even Order To The Park Or Outdoor Events With Our Location
             Technology
           </p>
-          <Link to="/Products">
-            <button className="bg-white text-black px-8 py-3 rounded-full ml-16 font-bold shadow-md hover:bg-gray-300 transition duration-300">
-              Order Now
-            </button>
-          </Link>
+          <div className="flex justify-center md:justify-start">
+            <Link to="/Products">
+              <button className="bg-white text-black ml-auto md:ml-16 md:mt-5  px-6 py-2 rounded-full font-bold shadow-md hover:bg-gray-300 transition duration-300">
+                Order Now
+              </button>
+            </Link>
+          </div>
         </div>
-        <div className="mt-10 md:mt-0 md:w-1/2 md:pl-8">
+        <div className="mt-6 md:mt-0 md:w-1/2 md:pl-8">
           <img
             className="w-full md:h-auto rounded-lg"
             src={Banner}
@@ -95,20 +87,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-wrap relative pt-10">
-        <p className="ml-48 pl-2 font-bold">What's on your mind?</p>
-        <FontAwesomeIcon
-          className="absolute right-64 border border-sky-500 h-8 rounded-full bg-yellow-300 text-black cursor-pointer"
-          icon={faArrowLeft}
-          onClick={slidePrev}
-        />
-        <FontAwesomeIcon
-          className="absolute right-52 border border-sky-500 h-8 rounded-full bg-yellow-300 text-black cursor-pointer"
-          icon={faArrowRight}
-          onClick={slideNext}
-        />
-      </div>
-      <Slider {...settings} className="pt-8 w-3/4 mx-auto" ref={sliderRef}>
+      <p className="font-bold text-center pt-10 text-3xl">
+        What's on your mind?
+      </p>
+
+      <Slider {...settings} className="pt-8 w-3/4 mx-auto">
         {Home_category.map((category, index) => (
           <div key={index} className="product-container">
             <div className="card2">
@@ -127,13 +110,17 @@ export default function Home() {
       <p className="text-center text-black font-bold mt-16 text-4xl ">
         About US
       </p>
-      <div className="flex justify-center">
-        <img className="h-80 mt-20 " src={Aimg} alt="Image" />
-        <p className="pt-16 w-2/5  ">
-          <p className="text-center text-1xl italic text-yellow-500">
+      <div className="flex flex-col md:flex-row justify-center items-center">
+        <img
+          className="h-auto md:h-80 mt-10 md:mt-10 md:mr-10 ml-16"
+          src={Aimg}
+          alt="Image"
+        />
+        <div className="md:w-2/5">
+          <p className="text-center text-2xl md:text-1xl italic text-yellow-500">
             <strong>Why Choose Us</strong>
           </p>
-          <p className="pt-4">
+          <p className="pt-4 text-center">
             Online food ordering platforms revolutionize dining, offering
             unparalleled convenience and choice. Customers can place orders
             anytime, anywhere with internet access, saving time and resources.
@@ -147,16 +134,20 @@ export default function Home() {
             home, work, or on the move, they elevate convenience and
             satisfaction in dining experiences.
           </p>
-        </p>
+        </div>
       </div>
+
       <p className="text-center font-bold text-4xl font-mono pt-10">
         Our Food Gallery
       </p>
       <Home_Product_Gallary />
-      <p className="text-center font-bold text-4xl font-mono pt-3">
+      <p className="text-center font-bold text-4xl font-mono pt-3 hidden md:block">
         Our Customer reviews
       </p>
-      <Home_review />
+      <div className="hidden md:block">
+        <Home_review />
+      </div>
+
       <p className="text-center font-bold text-4xl font-mono pt-10 bg-white pb-6">
         Send Us Massage
       </p>

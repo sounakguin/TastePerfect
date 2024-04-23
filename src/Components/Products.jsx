@@ -55,9 +55,9 @@ export default function Products({ cart, setcart, warning, setwarning }) {
 
   return (
     <div className="bg-gray-900">
-      <div className="my flex justify-between items-end px-4 sm:px-6 lg:px-8">
-        <div className="flex relative mt-10">
-          <label className="text-white text-xl pt-1">
+      <div className="my flex justify-between items-end px-4 sm:px-6 lg:px-8 flex-col md:flex-row">
+        <div className="flex relative mt-10 ml-3 md:ml-0">
+          <label className="text-white md:pt-1  md:text-xl">
             Search by Food Name :&nbsp;
           </label>
           <input
@@ -68,8 +68,8 @@ export default function Products({ cart, setcart, warning, setwarning }) {
             onChange={handelsearch}
           />
         </div>
-        <div className="relative mt-10">
-          <label className="text-white text-xl">
+        <div className="relative mt-10 mr-36 md:mr-0 ">
+          <label className="text-white  md:text-xl">
             Filter by Category :&nbsp;
           </label>
           <select
@@ -107,7 +107,7 @@ export default function Products({ cart, setcart, warning, setwarning }) {
                     </a>
                   </Link>
                   <div className="flex items-center justify-between mt-4">
-                    <h2 className="text-white text-lg font-medium">
+                    <h2 className="text-white text-lg font-medium w-80 md:w-56">
                       {item.strMeal}
                     </h2>
                     <button

@@ -81,7 +81,9 @@
   text-align: center;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.3s ease-in-out;
+  transition:
+    visibility 0s,
+    opacity 0.3s ease-in-out;
 }
 
 .container .card:hover .content {
@@ -99,4 +101,9 @@
 
 li {
   list-style-type: none;
+}
+
+/* Add this CSS */
+#nav-handle {
+  z-index: 1000; /* Set a higher z-index value */
 }

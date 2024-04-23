@@ -19,7 +19,7 @@ export default function Sitbook() {
             alt="Booking_form"
           />
         </div>
-        <div className="w-full md:w-1/2 px-6 py-8 bg-white ">
+        <div className="w-full px-6 py-8 mx-auto md:w-1/2   bg-white ">
           {showThankYou ? (
             <div className="text-center text-yellow-600 pt-44">
               <h2 className="text-2xl mb-4">Thank you for submitting</h2>
@@ -84,7 +84,7 @@ export default function Sitbook() {
                 ></textarea>
               </div>
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-80 "
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto"
                 type="submit"
               >
                 Submit
