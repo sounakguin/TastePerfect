@@ -56,7 +56,7 @@ export default function Products({ cart, setcart, warning, setwarning }) {
   return (
     <div className="bg-gray-900">
      <div className="my flex justify-center lg:justify-between lg:items-end flex-col lg:flex-row px-4 sm:px-6 lg:px-8">
-  <div className="flex relative mt-5 lg:mt-10 ml-3 lg:ml-0">
+  <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0">
     <label className="text-white lg:pt-1 lg:text-xl w-36 lg:w-auto  pt-1 ">Search by Name :&nbsp;</label>
     <input
       type="text"
@@ -66,7 +66,7 @@ export default function Products({ cart, setcart, warning, setwarning }) {
       onChange={handelsearch}
     />
   </div>
-  <div className="flex  mt-5 lg:mt-10 ml-3 lg:ml-0 ">
+  <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0 ">
     <label className="text-white lg:text-xl w-36 lg:w-auto pt-1 lg:pt-1">Filter by Category :&nbsp;</label>
     <select
       className="h-10 bg-white w-60 lg:w-96 pr-8 pl-5 focus:shadow focus:outline-none rounded-lg text-black border-2 border-yellow-400"
