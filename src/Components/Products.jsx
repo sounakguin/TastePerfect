@@ -115,7 +115,7 @@ export default function Products({ cart, setcart, warning, setwarning }) {
                       Add To Cart
                     </button>
                   </div>
-                  <br/>
+                
                   <p className="text-gray-300 text-sm md:text-base">Price : 16$</p>
                 </div>
               ))}

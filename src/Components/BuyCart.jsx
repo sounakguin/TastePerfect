@@ -32,35 +32,28 @@ export default function Cart({ cart, setCart }) {
     <div className="bg-gray-100 p-4">
       {cart.length === 0 ? (
         <div>
-          <p>Cart is empty</p>
+          <p className="text-red-600 text-xl font-semibold  text-center">
+            Cart is empty
+          </p>
         </div>
       ) : (
         <div>
           {cart.map((item, index) => (
             <div
-              className="flex items-center justify-between border-b-2 py-2"
+              className="flex flex-col md:flex-row items-center justify-between border-b-2 py-2"
               key={index}
             >
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center">
+              <div className="flex flex-col md:flex-row items-center space-x-4">
+                <div className="flex flex-col md:flex-row items-center">
                   <img
                     src={item.strMealThumb}
                     alt={item.strMeal}
                     className="h-16 w-16 rounded-full"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <div className="flex items-center">
-                    <div className="pl-10">
-                      <strong>Item Name</strong>: {item.strMeal}
-                    </div>
-                    <div className="ml-4">
-                      <strong>Category</strong>: {item.strCategory}
-                    </div>
-                    <div className="ml-4">
-                      <strong>Origin</strong>: {item.strArea}
-                    </div>
-                  </div>
+
+                <div className="item-center lg:pl-10">
+                  Item Name : <strong>{item.strMeal}</strong>
                 </div>
               </div>
 
@@ -75,12 +68,15 @@ export default function Cart({ cart, setCart }) {
             </div>
           ))}
 
-          <div className="flex justify-between mt-4">
-            <div>
-              <span className="font-bold">Total price of your Cart Items:</span>
-              <p>${totalPrice}</p>
+          <div className="flex flex-col md:flex-row items-center mt-4 md:justify-between">
+            <div className="flex">
+              <div className="font-bold items-center ">
+                Total price of your Cart Items:
+              </div>
+              <div className="items-center pl-1">${totalPrice}</div>
             </div>
-            <div>
+
+            <div className="pt-2 md:pt-0">
               <button
                 data-modal-target="crud-modal"
                 data-modal-toggle="crud-modal"

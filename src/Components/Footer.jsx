@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-blue-950 text-gray-300 py-6">
-      <div className="mx-auto flex flex-col md:flex-row items-center">
-        <div className="pl-16 mb-4 md:mb-0 text-center md:text-left">
-          <a href="#" className="flex items-center text-white">
+      <div className="mx-auto flex flex-col md:flex-row justify-center items-center ">
+        <div className="  pl-16 mb-4 md:mb-0   text-center md:text-left">
+         
             <img
               className="h-20 w-auto object-cover cursor-pointer"
               src={logo}
               alt=""
             />
-          </a>
-          <p className="mt-2 text-sm">Awo Order Karo and Enjoy Karo Khana</p>
+        
+          <p className="mt-2 text-sm ">Awo Order Karo and Enjoy Karo Khana</p>
         </div>
-        <div className="flex justify-center md:justify-end space-x-4">
+        <div className="flex flex-col md:flex-row justify-center md:justify-end space-x-4">
           <div className="pt-12 pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
