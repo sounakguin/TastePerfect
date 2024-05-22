@@ -55,33 +55,37 @@ export default function Products({ cart, setcart, warning, setwarning }) {
 
   return (
     <div className="bg-gray-900">
-     <div className="my flex justify-center lg:justify-between lg:items-end flex-col lg:flex-row px-4 sm:px-6 lg:px-8">
-  <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0">
-    <label className="text-white lg:pt-1 lg:text-xl w-36 lg:w-auto  pt-1 ">Search by Name :&nbsp;</label>
-    <input
-      type="text"
-      className="h-10 bg-white w-80 lg:w-96 pr-8 pl-5 focus:shadow focus:outline-none rounded-lg text-black border-2 border-yellow-400 "
-      placeholder="Search with Item Name..."
-      value={searchTerm}
-      onChange={handelsearch}
-    />
-  </div>
-  <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0 ">
-    <label className="text-white lg:text-xl w-36 lg:w-auto pt-1 lg:pt-1">Filter by Category :&nbsp;</label>
-    <select
-      className="h-10 bg-white w-60 lg:w-96 pr-8 pl-5 focus:shadow focus:outline-none rounded-lg text-black border-2 border-yellow-400"
-      value={filterOption}
-      onChange={handleFilterChange}
-    >
-      <option value="All">All</option>
-      <option value="Beef">Beef</option>
-      <option value="Chicken">Continental</option>
-      <option value="Seafood">Seafood</option>
-      <option value="Vegetarian">Vegetarian</option>
-      {/* Add more options as needed */}
-    </select>
-  </div>
-</div>
+      <div className="my flex justify-center lg:justify-between lg:items-end flex-col lg:flex-row px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0">
+          <label className="text-white lg:pt-1 lg:text-xl w-36 lg:w-auto  pt-1 ">
+            Search by Name :&nbsp;
+          </label>
+          <input
+            type="text"
+            className="h-10 bg-white w-80 lg:w-96 pr-8 pl-5 focus:shadow focus:outline-none rounded-lg text-black border-2 border-yellow-400 "
+            placeholder="Search with Item Name..."
+            value={searchTerm}
+            onChange={handelsearch}
+          />
+        </div>
+        <div className="flex flex-col sm:flex-row mt-5 lg:mt-10 ml-3 lg:ml-0 ">
+          <label className="text-white lg:text-xl w-36 lg:w-auto pt-1 lg:pt-1">
+            Filter by Category :&nbsp;
+          </label>
+          <select
+            className="h-10 bg-white w-60 lg:w-96 pr-8 pl-5 focus:shadow focus:outline-none rounded-lg text-black border-2 border-yellow-400"
+            value={filterOption}
+            onChange={handleFilterChange}
+          >
+            <option value="All">All</option>
+            <option value="Beef">Beef</option>
+            <option value="Chicken">Continental</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Vegetarian">Vegetarian</option>
+            {/* Add more options as needed */}
+          </select>
+        </div>
+      </div>
 
       {warning && (
         <div className="text-white font-bold text-4xl pt-5 md:pt-10 text-center">
@@ -93,7 +97,10 @@ export default function Products({ cart, setcart, warning, setwarning }) {
           <div className="flex flex-wrap -m-2 md:-m-4">
             {renderData &&
               renderData.map((item) => (
-                <div key={item.idMeal} className="lg:w-1/3 md:w-1/2 p-2 md:p-4 w-full">
+                <div
+                  key={item.idMeal}
+                  className="lg:w-1/4 md:w-1/2 p-2 md:p-4 w-full"
+                >
                   <Link to={`/Noproductsata/${item.idMeal}`}>
                     <a className="block relative h-48 rounded-lg overflow-hidden">
                       <img
@@ -105,7 +112,7 @@ export default function Products({ cart, setcart, warning, setwarning }) {
                   </Link>
                   <div className="flex items-center justify-between mt-2 ">
                     <h2 className="text-white text-lg font-medium w-2/3 md:w-3.6/4 lg:mt-0">
-                     Item name :&nbsp; {item.strMeal}
+                      Item name :&nbsp; {item.strMeal}
                     </h2>
                     <button
                       type="button"
@@ -115,8 +122,10 @@ export default function Products({ cart, setcart, warning, setwarning }) {
                       Add To Cart
                     </button>
                   </div>
-                
-                  <p className="text-gray-300 text-sm md:text-base">Price : 16$</p>
+
+                  <p className="text-gray-300 text-sm md:text-base">
+                    Price : 16$
+                  </p>
                 </div>
               ))}
           </div>

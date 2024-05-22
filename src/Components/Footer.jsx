@@ -15,7 +15,7 @@ export default function Footer() {
           <p className="mt-2 text-sm">Awo Order Karo and Enjoy Karo Khana</p>
         </div>
         <div className="flex flex-col md:flex-row  md:space-x-4 w-full pt-10 lg:ml-24">
-          <div className="pt-10 md:pt-0 md:pl-24">
+          <div className="pt-4 md:pt-0 md:pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
               <li>
