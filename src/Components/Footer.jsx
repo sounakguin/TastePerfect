@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-blue-950 text-gray-300 py-6">
-      <div className="mx-auto flex flex-col md:flex-row justify-center items-center ">
-        <div className="  pl-16 mb-4 md:mb-0   text-center md:text-left">
-         
-            <img
-              className="h-20 w-auto object-cover cursor-pointer"
-              src={logo}
-              alt=""
-            />
-        
-          <p className="mt-2 text-sm ">Awo Order Karo and Enjoy Karo Khana</p>
+      <div className="mx-auto flex flex-col md:flex-row justify-center items-center text-center md:text-left">
+        <div className="mb-4 md:mb-0 md:pl-16">
+          <img
+            className="h-20 w-auto object-cover cursor-pointer mx-auto md:mx-0"
+            src={logo}
+            alt="Logo"
+          />
+          <p className="mt-2 text-sm">Awo Order Karo and Enjoy Karo Khana</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center md:justify-end space-x-4">
-          <div className="pt-12 pl-24">
+        <div className="flex flex-col md:flex-row  md:space-x-4 w-full pt-10 lg:ml-24">
+          <div className="pt-10 md:pt-0 md:pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
               <li>
@@ -42,7 +40,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="pt-12 pl-24">
+          <div className="pt-12 md:pt-0 md:pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
               <li>
@@ -67,7 +65,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="pt-12 pl-24">
+          <div className="pt-12 md:pt-0 md:pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
               <li>
@@ -92,7 +90,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="pt-12 pl-24">
+          <div className="pt-12 md:pt-0 md:pl-24">
             <h3 className="text-lg font-semibold mb-2">Categories</h3>
             <ul className="text-sm">
               <li>
@@ -117,11 +115,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-lg pt-12 pl-28 font-semibold mb-2">
-              Follow Us
-            </h3>
-            <div className="flex space-x-2 pl-28 pt-2">
+          <div className="pt-12 md:pt-0 md:pl-24">
+            <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-2 pt-2">
               <a
                 href="#"
                 className="text-white hover:text-indigo-500 transition duration-300"
@@ -151,7 +147,7 @@ export default function Footer() {
                 className="text-white hover:text-indigo-500 transition duration-300"
               >
                 <svg
-                  fill="currentColor" // Set the fill color to currentColor
+                  fill="currentColor"
                   viewBox="0 0 24 24"
                   className="w-6 h-6"
                 >
