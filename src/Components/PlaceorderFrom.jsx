@@ -19,7 +19,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check if any required fields are empty
@@ -35,29 +35,68 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
     ];
     const isAnyFieldEmpty = requiredFields.some((field) => !formData[field]);
 
-    if (step === 3 && isAnyFieldEmpty) {
+    if (isAnyFieldEmpty) {
       alert("Please fill out all required fields.");
+      return;
     }
-    // Simulate order submission
-    // Ideally, you would submit this data to a backend API
-    console.log("Order submitted:", formData);
-    // Clear the cart upon successful order submission
-    clearcart();
-    // Reset the form data
-    setFormData({
-      name: "",
-      email: "",
-      mobile: "",
-      address: "",
-      cardNumber: "",
-      expiryDate: "",
-      cvv: "",
-      cardHolderName: "",
-    });
-    // Reset the step to 1
-    setStep(1);
-    // Navigate to the order success page
-    window.location.href = "/OrderSuccessMessage";
+
+    const {
+      name,
+      email,
+      mobile,
+      address,
+      cardNumber,
+      expiryDate,
+      cvv,
+      cardHolderName,
+    } = formData;
+
+    try {
+      const res = await fetch(
+        "https://taste-perfect-default-rtdb.firebaseio.com/Placeorderdata.json", // Ensure the endpoint is correct and has .json extension for Firebase
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            mobile,
+            address,
+            cardNumber,
+            expiryDate,
+            cvv,
+            cardHolderName,
+          }),
+        },
+      );
+
+      if (res.ok) {
+        alert("Your Order is submitted");
+        // Clear the cart upon successful order submission
+        clearcart();
+        // Reset the form data
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          address: "",
+          cardNumber: "",
+          expiryDate: "",
+          cvv: "",
+          cardHolderName: "",
+        });
+        // Reset the step to 1
+        setStep(1);
+        // Navigate to the order success page
+        window.location.href = "/OrderSuccessMessage";
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      alert("An error occurred while submitting your order. Please try again.");
+    }
   };
 
   const prevStep = () => {
@@ -126,7 +165,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 Mobile Number
               </label>
               <input
-                type="text"
+                type="number"
                 id="mobile"
                 name="mobile"
                 value={formData.mobile}
@@ -194,7 +233,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 Card Number
               </label>
               <input
-                type="text"
+                type="number"
                 id="cardNumber"
                 name="cardNumber"
                 value={formData.cardNumber}
@@ -211,7 +250,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 Expiry Date
               </label>
               <input
-                type="text"
+                type="date"
                 id="expiryDate"
                 name="expiryDate"
                 value={formData.expiryDate}
@@ -229,7 +268,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 CVV
               </label>
               <input
-                type="text"
+                type="number"
                 id="cvv"
                 name="cvv"
                 value={formData.cvv}

@@ -3,10 +3,50 @@ import Booking_image from "/Images/order_image.png";
 
 export default function Sitbook() {
   const [showThankYou, setShowThankYou] = useState(false);
+  const [userdata, setuserdata] = useState({
+    name: "",
+    email: "",
+    phonenumber: "",
+    massage: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handeldata = (e) => {
+    const { name, value } = e.target;
+    setuserdata({ ...userdata, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowThankYou(true);
+    const { name, email, phonenumber, massage } = userdata;
+    const res = await fetch(
+      "https://taste-perfect-default-rtdb.firebaseio.com/userdatarecord.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phonenumber,
+          massage,
+        }),
+      },
+    );
+    if (res) {
+      setShowThankYou(true);
+      setuserdata({
+        name: "",
+        email: "",
+        phonenumber: "",
+        massage: "",
+      });
+      setTimeout(() => {
+        setShowThankYou(false);
+      }, 4000);
+    } else {
+      alert("Something went wrong");
+    }
   };
 
   return (
@@ -37,6 +77,9 @@ export default function Sitbook() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  value={userdata.name}
+                  onChange={handeldata}
                   className="shadow-lg appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Enter your name"
                 />
@@ -51,6 +94,9 @@ export default function Sitbook() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  value={userdata.email}
+                  onChange={handeldata}
                   className="shadow-lg appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Enter your email"
                 />
@@ -65,6 +111,9 @@ export default function Sitbook() {
                 <input
                   type="tel"
                   id="phone"
+                  name="phonenumber"
+                  value={userdata.phonenumber}
+                  onChange={handeldata}
                   className="shadow-lg appearance-none border border-black  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder="Enter your phone number"
                 />
@@ -78,6 +127,9 @@ export default function Sitbook() {
                 </label>
                 <textarea
                   id="message"
+                  name="massage"
+                  value={userdata.massage}
+                  onChange={handeldata}
                   className="shadow-lg appearance-none border border-black  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   rows="4"
                   placeholder="Enter your message"
