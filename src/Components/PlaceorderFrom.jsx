@@ -250,7 +250,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 Expiry Date
               </label>
               <input
-                type="date"
+                type="text"
                 id="expiryDate"
                 name="expiryDate"
                 value={formData.expiryDate}
@@ -273,6 +273,7 @@ export default function PlaceOrderForm({ isVisible, clearcart }) {
                 name="cvv"
                 value={formData.cvv}
                 onChange={handleChange}
+                maxLength={3}
                 className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm"
                 required
               />
