@@ -1,6 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [contractdata, setcontractdata] = useState({
+    email: "",
+    number: "",
+    message: "",
+  });
+
+  const [Thank, setthank] = useState(false);
+
+  const handelchange = (event) => {
+    const { name, value } = event.target;
+    setcontractdata({ ...contractdata, [name]: value });
+  };
+
+  const handelsubmit = async (e) => {
+    e.preventDefault();
+    const { email, number, message } = contractdata;
+    const res = await fetch(
+      "https://taste-perfect-default-rtdb.firebaseio.com/Contractdata.json", // Fixed endpoint URL
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          number,
+          message,
+        }),
+      },
+    );
+    if (res.ok) {
+      setthank(true); // Show thank you message
+      setTimeout(() => {
+        setthank(false); // Hide thank you message after 3 seconds
+      }, 3000);
+    } else {
+      alert("Your data is not saved properly");
+    }
+    setcontractdata({
+      email: "",
+      number: "",
+      message: "",
+    });
+  };
+
   return (
     <div>
       <section className="text-gray-600 body-font relative">
@@ -25,55 +70,68 @@ export default function Contact() {
               Connect With US
             </h2>
             <p className="leading-relaxed mb-5 text-gray-600">
-              We will contract you with in 2 or 3 business days
+              We will contact you within 2 or 3 business days
             </p>
-            <div className="relative mb-4">
-              <label
-                htmlFor="email"
-                className="leading-7 text-sm text-gray-600"
+
+            {Thank && (
+              <p className="text-blue-500 mt-2">Thank you for your interest</p>
+            )}
+
+            <form onSubmit={handelsubmit}>
+              <div className="relative mb-4">
+                <label
+                  htmlFor="email"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={contractdata.email}
+                  onChange={handelchange}
+                  className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <label
+                  htmlFor="number"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Mobile no
+                </label>
+                <input
+                  type="number"
+                  id="number"
+                  name="number"
+                  value={contractdata.number}
+                  onChange={handelchange}
+                  className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <label
+                  htmlFor="message"
+                  className="leading-7 text-sm text-gray-600"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={contractdata.message}
+                  onChange={handelchange}
+                  className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                ></textarea>
+              </div>
+              <button
+                type="submit" // Changed to submit
+                className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
               >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-            <div className="relative mb-4">
-              <label
-                htmlFor="number"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Mobile no
-              </label>
-              <input
-                type="number"
-                id="number"
-                name="number"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-            <div className="relative mb-4">
-              <label
-                htmlFor="message"
-                className="leading-7 text-sm text-gray-600"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              ></textarea>
-            </div>
-            <button
-              type="button"
-              className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            >
-              Send
-            </button>
+                Send
+              </button>
+            </form>
           </div>
         </div>
       </section>

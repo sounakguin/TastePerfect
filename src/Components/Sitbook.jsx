@@ -35,18 +35,19 @@ export default function Sitbook() {
     );
     if (res) {
       setShowThankYou(true);
-      setuserdata({
-        name: "",
-        email: "",
-        phonenumber: "",
-        massage: "",
-      });
+
       setTimeout(() => {
         setShowThankYou(false);
       }, 4000);
     } else {
       alert("Something went wrong");
     }
+    setuserdata({
+      name: "",
+      email: "",
+      phonenumber: "",
+      massage: "",
+    });
   };
 
   return (
